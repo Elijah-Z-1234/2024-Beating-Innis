@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
-import team.gif.robot.subsystems.drivers.LimitSwitch;
+import team.gif.robot.subsystems.LimitSwitch;
 import team.gif.robot.subsystems.drivers.Pigeon;
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -41,6 +41,7 @@ public class Robot extends TimedRobot {
     oi = new OI();
     uiSmartDashboard = new UiSmartDashboard();
     limitSwitch = new LimitSwitch();
+    pigeon = new Pigeon(RobotMap.PIGEON_ID);
   }
 
   /**
@@ -59,6 +60,7 @@ public class Robot extends TimedRobot {
     CommandScheduler.getInstance().run();
     uiSmartDashboard.updateUI();
     System.out.println(limitSwitch.limitSwitchState());
+    System.out.println(pigeon.get360Heading());
   }
 
   /** This function is called once each time the robot enters Disabled mode. */
