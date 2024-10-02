@@ -48,6 +48,7 @@ public class Pigeon {
         return ypr[0];
     }
 
+
     /**
      * Returns Rotation2d object using heading from the pigeon
      */
