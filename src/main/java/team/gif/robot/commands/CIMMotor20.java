@@ -19,8 +19,6 @@ public class CIMMotor20 extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        double speed = 0.2;
-        Robot.CIM.turnmotor(speed);
         Robot.CIM.turnmotor(Constants.MOTOR_PERCENT);
     }
 
@@ -32,5 +30,7 @@ public class CIMMotor20 extends Command {
 
     // Called when the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) {}
+    public void end(boolean interrupted) {
+        Robot.CIM.turnmotor(0);
+    }
 }

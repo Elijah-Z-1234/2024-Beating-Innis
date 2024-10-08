@@ -19,6 +19,5 @@ import edu.wpi.first.math.util.Units;
  */
 public final class Constants {
     public static final double MOTOR_PERCENT = 0.2;
-    public static final double REVERSE_MOTOR_PERCENT = -0.2;
 
 }
