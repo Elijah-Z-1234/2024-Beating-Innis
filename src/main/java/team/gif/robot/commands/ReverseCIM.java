@@ -19,7 +19,7 @@ public class ReverseCIM extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.CIM.turnmotor(-Constants.MOTOR_PERCENT);
+        Robot.CIM.turnmotor(-Constants.CIM_MOTOR_PERCENT);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.

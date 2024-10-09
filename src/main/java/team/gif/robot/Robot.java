@@ -41,11 +41,13 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
-    oi = new OI();
+    CIM = new Talon();
     uiSmartDashboard = new UiSmartDashboard();
     limitSwitch = new LimitSwitch();
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
     CIM.setDefaultCommand(new JoystickCIM());
+
+    oi = new OI();
   }
 
   /**
@@ -63,8 +65,8 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
     uiSmartDashboard.updateUI();
-    System.out.println(limitSwitch.limitSwitchState());
-    System.out.println(pigeon.get360Heading());
+    //System.out.println(limitSwitch.limitSwitchState());
+    //System.out.println(pigeon.get360Heading());
   }
 
   /** This function is called once each time the robot enters Disabled mode. */

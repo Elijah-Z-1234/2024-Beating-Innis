@@ -12,12 +12,14 @@ import team.gif.robot.RobotMap;
 public class LimitSwitch extends SubsystemBase {
   private static DigitalInput limitSwitch;
 
-  /** Creates a new ExampleSubsystem. */
+  /**
+   * Creates a new ExampleSubsystem.
+   */
   public LimitSwitch() {
     limitSwitch = new DigitalInput(RobotMap.LIMIT_SWITCH_ID);
   }
 
-  public boolean limitSwitchState(){
+  public boolean limitSwitchState() {
     return limitSwitch.get();
   }
 }

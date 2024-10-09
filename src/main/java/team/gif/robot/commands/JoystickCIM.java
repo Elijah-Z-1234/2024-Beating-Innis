@@ -18,7 +18,7 @@ public class JoystickCIM extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        double josytickSpeed = Robot.oi.driver.getLeftTriggerAxis();
+        double josytickSpeed = -Robot.oi.driver.getLeftY();
         Robot.CIM.turnmotor(josytickSpeed);
     }
 
