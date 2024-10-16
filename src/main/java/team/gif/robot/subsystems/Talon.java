@@ -22,6 +22,7 @@ public class Talon extends SubsystemBase {
     talon.setNeutralMode(NeutralMode.Brake);
   }
   public void turnmotor(double percentOutput){
+
     talon.set(TalonSRXControlMode.PercentOutput, percentOutput);
   }
 }

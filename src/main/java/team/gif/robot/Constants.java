@@ -19,5 +19,5 @@ import edu.wpi.first.math.util.Units;
  */
 public final class Constants {
     public static final double CIM_MOTOR_PERCENT = 0.2;
-
+    public static final double SPARK_MAX_VOLTAGE = 2.5;
 }
