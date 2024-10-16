@@ -17,6 +17,6 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 public class UI {
     public UI() {
         ShuffleboardTab shuffleboardTab = Shuffleboard.getTab("BAB");
-
+        shuffleboardTab.addBoolean("Limit Switch", Robot.limitSwitch::limitSwitchState);
     }
 }

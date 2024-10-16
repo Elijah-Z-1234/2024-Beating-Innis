@@ -8,7 +8,7 @@ public class CIMMotor20 extends Command {
 
     public CIMMotor20() {
         super();
-        addRequirements(Robot.CIM);
+        addRequirements(Robot.cimMotor);
         //addRequirements(Robot.climber); // uncomment
     }
 
@@ -19,7 +19,8 @@ public class CIMMotor20 extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.CIM.turnmotor(Constants.CIM_MOTOR_PERCENT);
+        Robot.cimMotor.turnMotor(Constants.CIM_MOTOR_PERCENT);
+
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
@@ -31,6 +32,6 @@ public class CIMMotor20 extends Command {
     // Called when the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        Robot.CIM.turnmotor(0);
+        Robot.cimMotor.turnMotor(0);
     }
 }
