@@ -7,7 +7,7 @@ public class JoystickCIM extends Command {
 
     public JoystickCIM() {
         super();
-        addRequirements(Robot.CIM);
+        addRequirements(Robot.cimMotor);
         //addRequirements(Robot.climber); // uncomment
     }
 
@@ -19,7 +19,7 @@ public class JoystickCIM extends Command {
     @Override
     public void execute() {
         double josytickSpeed = -Robot.oi.driver.getLeftY();
-        Robot.CIM.turnmotor(josytickSpeed);
+        Robot.cimMotor.turnMotor(josytickSpeed);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.

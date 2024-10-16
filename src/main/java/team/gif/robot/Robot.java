@@ -30,8 +30,9 @@ public class Robot extends TimedRobot {
   public static Pigeon pigeon;
   public static LimitSwitch limitSwitch;
   public static UiSmartDashboard uiSmartDashboard;
-  public static Talon CIM;
+  public static Talon cimMotor;
   public static SparkMax neoMotor;
+  public static UI ui;
   public static final boolean enableSwerveDebug = false;
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -42,13 +43,13 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
-    CIM = new Talon();
+    cimMotor = new Talon();
+    cimMotor.setDefaultCommand(new JoystickCIM());
     uiSmartDashboard = new UiSmartDashboard();
     limitSwitch = new LimitSwitch();
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
-    CIM.setDefaultCommand(new JoystickCIM());
     neoMotor = new SparkMax();
-
+    ui = new UI();
     oi = new OI();
   }
 
