@@ -1,32 +1,36 @@
 package team.gif.robot.commands;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
+import team.gif.robot.Constants;
+import team.gif.robot.Robot;
 
-public class PressButton extends Command {
+public class ReverseCIM extends Command {
 
-    public PressButton() {
+    public ReverseCIM() {
         super();
+        addRequirements(Robot.CIM);
         //addRequirements(Robot.climber); // uncomment
     }
 
     // Called when the command is initially scheduled.
     @Override
-    public void initialize() {
-        //System.out.println(Timer.getFPGATimestamp());
-    }
+    public void initialize() {}
 
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
-    public void execute() {}
+    public void execute() {
+        Robot.CIM.turnmotor(-Constants.CIM_MOTOR_PERCENT);
+    }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
     @Override
     public boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called when the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) {}
+    public void end(boolean interrupted) {
+        Robot.CIM.turnmotor(0);
+    }
 }

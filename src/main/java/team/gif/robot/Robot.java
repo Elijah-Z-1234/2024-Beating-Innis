@@ -9,7 +9,10 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
+import team.gif.robot.commands.CIMMotor20;
+import team.gif.robot.commands.JoystickCIM;
 import team.gif.robot.subsystems.LimitSwitch;
+import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -27,7 +30,7 @@ public class Robot extends TimedRobot {
   public static Pigeon pigeon;
   public static LimitSwitch limitSwitch;
   public static UiSmartDashboard uiSmartDashboard;
-
+  public static Talon CIM;
   public static final boolean enableSwerveDebug = false;
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -38,10 +41,13 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
-    oi = new OI();
+    CIM = new Talon();
     uiSmartDashboard = new UiSmartDashboard();
     limitSwitch = new LimitSwitch();
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
+    CIM.setDefaultCommand(new JoystickCIM());
+
+    oi = new OI();
   }
 
   /**
@@ -59,8 +65,8 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
     uiSmartDashboard.updateUI();
-    System.out.println(limitSwitch.limitSwitchState());
-    System.out.println(pigeon.get360Heading());
+    //System.out.println(limitSwitch.limitSwitchState());
+    //System.out.println(pigeon.get360Heading());
   }
 
   /** This function is called once each time the robot enters Disabled mode. */
