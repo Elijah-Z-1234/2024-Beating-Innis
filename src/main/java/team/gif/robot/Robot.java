@@ -9,9 +9,9 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
-import team.gif.robot.commands.CIMMotor20;
 import team.gif.robot.commands.JoystickCIM;
 import team.gif.robot.subsystems.LimitSwitch;
+import team.gif.robot.subsystems.SparkMax;
 import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
 /**
@@ -31,6 +31,7 @@ public class Robot extends TimedRobot {
   public static LimitSwitch limitSwitch;
   public static UiSmartDashboard uiSmartDashboard;
   public static Talon CIM;
+  public static SparkMax neoMotor;
   public static final boolean enableSwerveDebug = false;
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -46,6 +47,7 @@ public class Robot extends TimedRobot {
     limitSwitch = new LimitSwitch();
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
     CIM.setDefaultCommand(new JoystickCIM());
+    neoMotor = new SparkMax();
 
     oi = new OI();
   }
@@ -65,7 +67,7 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
     uiSmartDashboard.updateUI();
-    //System.out.println(limitSwitch.limitSwitchState());
+    // System.out.println(limitSwitch.limitSwitchState());
     //System.out.println(pigeon.get360Heading());
   }
 
