@@ -19,5 +19,6 @@ public class UI {
         ShuffleboardTab shuffleboardTab = Shuffleboard.getTab("BAB");
         shuffleboardTab.addBoolean("Limit Switch", Robot.limitSwitch::limitSwitchState);
         Robot.pigeon.addToShuffleboard("Pigeon Tab", "Heading");
+        shuffleboardTab.addDouble("Spark RPM", Robot.neoMotor::getMotorSpeedInRPM);
     }
 }

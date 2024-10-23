@@ -2,10 +2,7 @@ package team.gif.robot;
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-import team.gif.robot.commands.CIMMotor20;
-import team.gif.robot.commands.NeoForward;
-import team.gif.robot.commands.PressButton;
-import team.gif.robot.commands.ReverseCIM;
+import team.gif.robot.commands.*;
 
 public class OI {
     /*
@@ -90,9 +87,10 @@ public class OI {
          * Simple Test:
          *   aX.onTrue(new PrintCommand("aX"));
          */
-        dA.onTrue(new PressButton());
+        //dA.onTrue(new PressButton());
         dX.whileTrue(new CIMMotor20());
         dB.whileTrue(new ReverseCIM());
         dY.whileTrue(new NeoForward());
+        dA.whileTrue(new Neo60RPM());
     }
 }
