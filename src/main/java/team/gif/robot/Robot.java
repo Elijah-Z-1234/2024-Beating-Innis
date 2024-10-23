@@ -32,6 +32,7 @@ public class Robot extends TimedRobot {
   public static UiSmartDashboard uiSmartDashboard;
   public static Talon cimMotor;
   public static SparkMax neoMotor;
+
   public static UI ui;
   public static final boolean enableSwerveDebug = false;
   /**
