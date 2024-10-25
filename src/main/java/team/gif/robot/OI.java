@@ -92,5 +92,7 @@ public class OI {
         dB.whileTrue(new ReverseCIM());
         dY.whileTrue(new NeoForward());
         dA.whileTrue(new Neo60RPM());
+        dLBump.onTrue(new Solenoid_In());
+        dRBump.onTrue(new Solenoid_Out());
     }
 }

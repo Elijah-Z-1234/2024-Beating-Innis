@@ -4,13 +4,18 @@
 
 package team.gif.robot;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PneumaticHub;
+import edu.wpi.first.wpilibj.PneumaticsControlModule;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.simulation.PneumaticsBaseSim;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
 import team.gif.robot.commands.JoystickCIM;
 import team.gif.robot.subsystems.LimitSwitch;
+import team.gif.robot.subsystems.Solenoid;
 import team.gif.robot.subsystems.SparkMax;
 import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
@@ -32,6 +37,7 @@ public class Robot extends TimedRobot {
   public static UiSmartDashboard uiSmartDashboard;
   public static Talon cimMotor;
   public static SparkMax neoMotor;
+  public static Solenoid pneumatics;
 
   public static UI ui;
   public static final boolean enableSwerveDebug = false;
@@ -50,6 +56,7 @@ public class Robot extends TimedRobot {
     limitSwitch = new LimitSwitch();
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
     neoMotor = new SparkMax();
+    pneumatics = new Solenoid();
     ui = new UI();
     oi = new OI();
   }
